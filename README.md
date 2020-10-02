@@ -55,3 +55,7 @@
 - #### Countdown Clock and Timer :
 
 - #### Random Wikipedia Article :
+
+- #### Mad Libs Generator :
+
+- #### Currency Converter :
