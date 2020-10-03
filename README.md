@@ -37,8 +37,10 @@
 - #### Python Story Generator :
 
 - #### YouTube video downloader :
+	-Generate a `Python` code that downloads the Youtube video at given URL
 
 - #### Python Website Blocker :
+	-Generate a `Python` code that blocks the website with help of IP address/url provided ny user
 
 - #### Spin a Yarn :
 
@@ -49,6 +51,7 @@
 - #### Leap it! :
 
 - #### Find out, Fibonacci! :
+	-Generate a `Python` code  to find all Fibonacci numbers until a given number
 
 - #### Calculator :
 
@@ -56,10 +59,17 @@
 
 - #### Random Wikipedia Article :
 
-
 - #### Mad Libs Generator :
 
 - #### Currency Converter :
 
 - #### Music Player Using Python :
+
+- #### Factorial Finder! :
+
+- #### Alarm Clock :
+
+- #### Text to Speech Converter :
+
+
 
