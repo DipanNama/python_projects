@@ -56,4 +56,10 @@
 
 - #### Random Wikipedia Article :
 
+
+- #### Mad Libs Generator :
+
+- #### Currency Converter :
+
 - #### Music Player Using Python :
+
