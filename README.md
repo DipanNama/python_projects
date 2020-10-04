@@ -71,5 +71,5 @@
 
 - #### Text to Speech Converter :
 
-
-
+- #### Object detection :
+	-find animal in the forest
