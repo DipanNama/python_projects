@@ -73,3 +73,15 @@
 
 - #### Object detection :
 	-find animal in the forest
+	
+- #### Voice Assistant :
+
+- #### Libary system :
+	-Make a gui with a simple database so you can take books and put them back
+	
+- #### Terminal chat app :
+
+- #### Pong :
+	- Create a game called pong with a libary such as pygame
+
+- #### Quiz game
