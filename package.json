@@ -1,0 +1,1 @@
+{"name":"binary-search-lab","version":"1.0.0","private":true,"scripts":{"test":"python3 -m unittest -v test_search.py && node --test search.test.cjs","build":"node build.cjs"}}
