@@ -1,3 +1,23 @@
+# Binary Search Lab
+
+First implemented project from the original roadmap below: binary search on sorted integers. Browser step trace plus a Python CLI download. Other roadmap projects remain ideas, not shipped features.
+
+## Run
+
+Python 3: `python3 search.py -- "2,5,8,12" 8`. Use the `--` separator before the list, especially for negative values. 1 to 64 ascending integers, within +/-1,000,000. Returns first matching index or -1, plus low/high/mid comparisons. No data storage or network.
+
+Node 22 + Python 3: `npm test` (8 Python + 12 JS including CLI parity), `npm run build`. No dependency installation needed for the app. Browser changes reset the prior search; next/back/reset/export, theme and mobile tested. Input validation is O(n); search comparisons O(log n). Sorting is not automatic.
+
+## Deployment
+
+Main-only Pages workflow. Local tests/build and dark desktop/mobile checks, then typed branch, one PR/squash, one production build, semver release. Original roadmap and open community contributions preserved. No profile changes.
+
+## UI sources
+
+Pines buttons adapted from https://devdojo.com/pines/docs/button , component discovery checked at https://shoogle.dev/ . Local Lucide icons (ISC, LICENSE-icons). No remote scripts/fonts/assets.
+
+---
+
 # python_projects
 
 
