@@ -1,0 +1,79 @@
+<!doctype html><html lang="en" class="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Walk through binary search one comparison at a time, with a tested Python implementation to download."><title>Binary Search Lab - Python Projects</title><link rel="stylesheet" href="style.css"></head><body><main><header><div class="brand">Python Projects <span>by Dipan Nama</span></div><button id="theme" aria-label="Switch color theme"><span class="tile"><!-- @license lucide-static v1.54.0 - ISC -->
+<svg class="icon"
+  class="lucide lucide-moon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+</svg>
+</span></button></header><section class="intro"><span class="pill">Binary search lab</span><h1>Find it. Halve the search.</h1><p>One comparison at a time. See how a sorted list gets smaller.</p></section><section class="layout"><div class="frame"><form class="inner" id="form"><h2>Set up your search.</h2><label for="numbers">Sorted integers</label><textarea id="numbers" spellcheck="false" maxlength="2000">2, 5, 8, 12, 16, 23, 38, 56, 72, 91, 104, 120</textarea><label for="target">Target</label><input id="target" value="38" inputmode="numeric" maxlength="20"><button class="primary" type="submit">Start search <span class="tile"><!-- @license lucide-static v1.54.0 - ISC -->
+<svg class="icon"
+  class="lucide lucide-arrow-up-right"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M7 7h10v10" />
+  <path d="M7 17 17 7" />
+</svg>
+</span></button><button type="button" class="secondary" id="sample">Load example</button><p class="hint">1 to 64 sorted integers. Values from -1,000,000 to 1,000,000. Duplicate values return the first matching index.</p><div id="notice" class="notice" role="status" aria-live="polite"></div></form></div><div><div class="result-head"><h2>Follow the narrowing.</h2><span id="meta" class="step-meta">Ready to begin</span></div><div id="cells" class="numbers" aria-label="Search array"></div><div class="legend"><span><i class="dot"></i>Middle comparison</span><span><i class="dot dim"></i>Excluded this step</span></div><div class="explanation" aria-live="polite"><strong id="step-title">Start with a sorted list.</strong><p id="step-body">Choose a target, then use Next step to follow each comparison.</p></div><div class="controls"><button id="prev"><span class="tile"><!-- @license lucide-static v1.54.0 - ISC -->
+<svg class="icon"
+  class="lucide lucide-chevron-left"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m15 18-6-6 6-6" />
+</svg>
+</span>Back</button><button id="next">Next step <span class="tile"><!-- @license lucide-static v1.54.0 - ISC -->
+<svg class="icon"
+  class="lucide lucide-chevron-right"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m9 18 6-6-6-6" />
+</svg>
+</span></button><button id="reset" class="push">Reset</button></div><button id="export">Export trace JSON <span class="tile"><!-- @license lucide-static v1.54.0 - ISC -->
+<svg class="icon"
+  class="lucide lucide-download"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 15V3" />
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+  <path d="m7 10 5 5 5-5" />
+</svg>
+</span></button></div></section><section class="notes"><div><strong>Sorted input is essential</strong><p>The algorithm only works on ascending numbers. Unsorted inputs are rejected rather than silently changed.</p></div><div><strong>What each step means</strong><p>Low and high mark the active range. The middle value decides which half can be ruled out. Indices start at zero.</p></div><div><strong>First match, even with duplicates</strong><p>After equality, the search continues left to find the first match. At most logarithmic comparisons; input validation is linear.</p></div></section><section class="bottom"><p><code>python3 search.py -- "2,5,8,12" 8</code><br>Download a dependency-free Python 3 CLI. The -- separator also supports lists that begin with a negative number.</p><a href="search.py" download>Download Python CLI</a></section><div class="divider"></div><footer><span>Built by Dipan Nama. Input stays in this tab; only theme is saved.</span><a href="https://github.com/DipanNama/python_projects" target="_blank" rel="noopener noreferrer">Source & roadmap</a></footer></main><script src="search.js"></script><script src="app.js"></script></body></html>
