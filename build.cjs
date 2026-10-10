@@ -1,0 +1,1 @@
+const f=require('node:fs');f.rmSync('dist',{recursive:true,force:true});f.cpSync('site','dist',{recursive:true});f.copyFileSync('search.py','dist/search.py');f.writeFileSync('dist/.nojekyll','');console.log('Built static lab and Python download');
