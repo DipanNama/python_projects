@@ -1,0 +1,6 @@
+(function(root){
+function parse(raw){if(raw.length>2000)throw Error('List is too long. Use up to 64 integers.');const pieces=raw.trim().split(/[\s,]+/);if(!raw.trim()||pieces.length>64)throw Error('Use 1 to 64 sorted integers.');return pieces.map(p=>integer(p));}
+function integer(raw){const s=String(raw).trim();if(!/^-?\d+$/.test(s)||!Number.isSafeInteger(Number(s))||Math.abs(Number(s))>1000000)throw Error('Use whole numbers between -1000000 and 1000000.');return Number(s);}
+function search(numbers,target){if(!Array.isArray(numbers)||!numbers.length||numbers.length>64)throw Error('Use 1 to 64 sorted integers.');if(numbers.some(n=>!Number.isInteger(n)||Math.abs(n)>1000000)||!Number.isInteger(target)||Math.abs(target)>1000000)throw Error('Use whole numbers between -1000000 and 1000000.');if(numbers.some((n,i)=>i&&n<numbers[i-1]))throw Error('Sort the list in ascending order first.');let low=0,high=numbers.length-1,index=-1;const steps=[];while(low<=high){const mid=Math.floor((low+high)/2),value=numbers[mid];steps.push({low,high,mid,value,relation:value===target?'equal':value<target?'lower':'higher'});if(value<target)low=mid+1;else{if(value===target)index=mid;high=mid-1;}}return {index,steps};}
+const api={parse,integer,search};if(typeof module!=='undefined')module.exports=api;else root.SearchLab=api;
+})(typeof window!=='undefined'?window:globalThis);
