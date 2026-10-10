@@ -1,0 +1,13 @@
+const t=require('node:test'),a=require('node:assert/strict'),s=require('./site/search.js');
+t('parse commas spaces negatives',()=>a.deepEqual(s.parse('-2, 0  3'),[-2,0,3]));
+t('reject malformed inputs',()=>{for(const v of ['', '1.5','1e3','NaN','Infinity','1,<script>','1000001','-1000001'])a.throws(()=>s.parse(v));});
+t('size bound',()=>a.throws(()=>s.parse(Array(65).fill(1).join(','))));
+t('first duplicate',()=>a.equal(s.search([1,2,2,2,5],2).index,1));
+t('missing',()=>a.equal(s.search([1,2,5],3).index,-1));
+t('single',()=>a.equal(s.search([4],4).index,0));
+t('unsorted rejected',()=>a.throws(()=>s.search([2,1],1)));
+t('trace',()=>a.deepEqual(s.search([1,3,5],5).steps[0],{low:0,high:2,mid:1,value:3,relation:'lower'}));
+t('input stays intact',()=>{const n=[1,2,3];s.search(n,2);a.deepEqual(n,[1,2,3]);});
+t('all targets and edges',()=>{const n=Array.from({length:64},(_,i)=>i*2-64);for(let v=-70;v<=70;v++)a.equal(s.search(n,v).index,n.indexOf(v));});
+t('integer validation',()=>{for(const x of [1.5,Infinity,NaN,1000001])a.throws(()=>s.search([1],x));});
+t('Python parity',()=>{const {execFileSync}=require('node:child_process');for(const [n,v] of [[[1,3,5],5],[[2,2,2],2],[[-5,0,4],-2]])a.deepEqual(JSON.parse(execFileSync('python3',['search.py','--',n.join(','),String(v)])),s.search(n,v));});
